@@ -63,31 +63,25 @@ void CaseLight::update(const bool sflag) {
     const uint8_t i = on ? brightness : 0, n10ct = ENABLED(INVERT_CASE_LIGHT) ? 255 - i : i;
     UNUSED(n10ct);
   #endif
-
+// CASE_LIGHT_IS_COLOR_LED = CASE_LIGHT_USE_NEOPIXEL || CASE_LIGHT_USE_RGB_LED
   #if CASE_LIGHT_IS_COLOR_LED
-    leds.set_color(LEDColor(color.r, color.g, color.b OPTARG(HAS_WHITE_LED, color.w), n10ct));
-  #else // !CASE_LIGHT_IS_COLOR_LED
-
-    #if CASELIGHT_USES_BRIGHTNESS
-      if (pin_is_pwm())
-        analogWrite(pin_t(CASE_LIGHT_PIN), (
-          #if CASE_LIGHT_MAX_PWM == 255
-            n10ct
-          #else
-            map(n10ct, 0, 255, 0, CASE_LIGHT_MAX_PWM)
-          #endif
-        ));
-      else
+    leds.set_color(LEDColor(color.r, color.g, color.b OPTARG(HAS_WHITE_LED, color.w) OPTARG(CASELIGHT_USES_BRIGHTNESS, n10ct)));
+    #if ENABLED(CASE_LIGHT_USE_RGB_LED)
+      if (leds.lights_on) leds.update(); else leds.set_off();
     #endif
-      {
-        const bool s = on ? TERN(INVERT_CASE_LIGHT, LOW, HIGH) : TERN(INVERT_CASE_LIGHT, HIGH, LOW);
-        WRITE(CASE_LIGHT_PIN, s ? HIGH : LOW);
-      }
-
-  #endif // !CASE_LIGHT_IS_COLOR_LED
-
-  #if ENABLED(CASE_LIGHT_USE_RGB_LED)
-    if (leds.lights_on) leds.update(); else leds.set_off();
+  #else
+    if (ENABLED(CASELIGHT_USES_BRIGHTNESS) && pin_is_pwm()) {
+      analogWrite(pin_t(CASE_LIGHT_PIN), (
+        #if CASE_LIGHT_MAX_PWM == 255
+          n10ct
+        #else
+          map(n10ct, 0, 255, 0, CASE_LIGHT_MAX_PWM)
+        #endif
+      ));
+    }
+    else {
+      WRITE(CASE_LIGHT_PIN, TERN(INVERT_CASE_LIGHT, !on, on) ? HIGH : LOW);
+    }
   #endif
 }
 
