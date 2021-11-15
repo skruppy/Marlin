@@ -68,15 +68,15 @@
     #define SERVO0_PIN                        11
   #endif
 #endif
-#ifndef SERVO1_PIN
-  #define SERVO1_PIN                           6
-#endif
-#ifndef SERVO2_PIN
-  #define SERVO2_PIN                           5
-#endif
-#ifndef SERVO3_PIN
-  #define SERVO3_PIN                           4
-#endif
+// #ifndef SERVO1_PIN
+//   #define SERVO1_PIN                           6
+// #endif
+// #ifndef SERVO2_PIN
+//   #define SERVO2_PIN                           5
+// #endif
+// #ifndef SERVO3_PIN
+//   #define SERVO3_PIN                           4
+// #endif
 
 //
 // Limit Switches
