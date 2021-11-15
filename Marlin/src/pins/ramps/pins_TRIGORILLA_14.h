@@ -33,9 +33,9 @@
 //
 #if MB(TRIGORILLA_14_11)
   #define SERVO0_PIN                           5
-  #define SERVO1_PIN                           4
-  #define SERVO2_PIN                          11
-  #define SERVO3_PIN                           6
+//   #define SERVO1_PIN                           4
+//   #define SERVO2_PIN                          11
+//   #define SERVO3_PIN                           6
 #endif
 
 //
