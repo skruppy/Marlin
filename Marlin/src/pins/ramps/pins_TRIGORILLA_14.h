@@ -41,13 +41,13 @@
 //
 // PWM FETS
 //
-#define MOSFET_B_PIN                          45  // HEATER1
+//#define MOSFET_B_PIN                          45  // HEATER1
 
 //
 // Heaters / Fans
 //
 #define FAN0_PIN                               9  // FAN0
-#define FAN1_PIN                               7  // FAN1
+#define FAN1_PIN                              45  // FAN1
 #define FAN2_PIN                              44  // FAN2
 #ifndef E0_AUTO_FAN_PIN
   #define E0_AUTO_FAN_PIN               FAN2_PIN
