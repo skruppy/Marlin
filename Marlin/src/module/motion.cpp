@@ -221,10 +221,10 @@ int16_t Motion::feedrate_percentage = 100;
 #if ENABLED(DWIN_LCD_PROUI)
   uint16_t Motion::z_probe_slow_mm_s = MMM_TO_MMS(Z_PROBE_FEEDRATE_SLOW);
 #elif Z_PROBE_FEEDRATE_SLOW
-  constexpr feedRate_t Motion::z_probe_slow_mm_s;
+  feedRate_t Motion::z_probe_slow_mm_s = MMM_TO_MMS(Z_PROBE_FEEDRATE_SLOW);
 #endif
 #ifdef Z_PROBE_FEEDRATE_FAST
-  constexpr feedRate_t Motion::z_probe_fast_mm_s;
+  feedRate_t Motion::z_probe_fast_mm_s = MMM_TO_MMS(Z_PROBE_FEEDRATE_FAST);
 #endif
 
 #if HAS_PROUI_MESH_EDIT
