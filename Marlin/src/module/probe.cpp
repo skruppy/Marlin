@@ -754,11 +754,11 @@ float Probe::run_z_probe(const bool sanity_check/*=true*/) {
 
     // If the nozzle is well over the travel height then
     // move down quickly before doing the slow probe
-    const float z = (Z_CLEARANCE_DEPLOY_PROBE) + 5.0f + (offset.z < 0 ? -offset.z : 0);
+    const float z = (Z_CLEARANCE_DEPLOY_PROBE) + (offset.z < 0 ? -offset.z : 0);
     if (current_position.z > z) {
       // Probe down fast. If the probe never triggered, raise for probe clearance
       if (!probe_down_to_z(z, z_probe_fast_mm_s))
-        do_blocking_move_to_z(current_position.z + Z_CLEARANCE_BETWEEN_PROBES, z_probe_fast_mm_s);
+        do_blocking_move_to_z(current_position.z + Z_CLEARANCE_MULTI_PROBE, z_probe_fast_mm_s);
     }
   #endif
 
@@ -781,7 +781,7 @@ float Probe::run_z_probe(const bool sanity_check/*=true*/) {
       if (TERN0(PROBE_TARE, tare())) return true;
 
       // Probe downward slowly to find the bed
-      if (try_to_probe(PSTR("SLOW"), z_probe_low_point, MMM_TO_MMS(Z_PROBE_FEEDRATE_SLOW),
+      if (try_to_probe(PSTR("SLOW"), z_probe_low_point, z_probe_slow_mm_s,
                        sanity_check, Z_CLEARANCE_MULTI_PROBE) ) return NAN;
 
       TERN_(MEASURE_BACKLASH_WHEN_PROBING, backlash.measure_with_probe());
