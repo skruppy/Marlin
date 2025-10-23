@@ -679,8 +679,8 @@
         #define DOGLCD_MOSI          EXP1_03_PIN
         #define DOGLCD_SCK           EXP1_05_PIN
       #else
-        #define LCD_PINS_RS          EXP1_04_PIN
-        #define LCD_PINS_EN          EXP1_03_PIN
+        #define LCD_PINS_RS          20
+        #define LCD_PINS_EN          21
         #define LCD_PINS_D4          EXP1_05_PIN
         #define LCD_PINS_D5          EXP1_06_PIN
         #define LCD_PINS_D6          EXP1_07_PIN
