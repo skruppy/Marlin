@@ -83,26 +83,26 @@
 //
 #ifndef X_STOP_PIN
   #ifndef X_MIN_PIN
-    #define X_MIN_PIN                          3
+    #define X_MIN_PIN                         -1
   #endif
   #ifndef X_MAX_PIN
-    #define X_MAX_PIN                          2
+    #define X_MAX_PIN                         50
   #endif
 #endif
 #ifndef Y_STOP_PIN
   #ifndef Y_MIN_PIN
-    #define Y_MIN_PIN                         14
+    #define Y_MIN_PIN                         -1
   #endif
   #ifndef Y_MAX_PIN
-    #define Y_MAX_PIN                         15
+    #define Y_MAX_PIN                         51
   #endif
 #endif
 #ifndef Z_STOP_PIN
   #ifndef Z_MIN_PIN
-    #define Z_MIN_PIN                         18
+    #define Z_MIN_PIN                         53
   #endif
   #ifndef Z_MAX_PIN
-    #define Z_MAX_PIN                         19
+    #define Z_MAX_PIN                         52
   #endif
 #endif
 
@@ -337,12 +337,12 @@
   //#define E3_HARDWARE_SERIAL Serial1
   //#define E4_HARDWARE_SERIAL Serial1
 
-  #ifndef X_SERIAL_TX_PIN
-    #define X_SERIAL_TX_PIN                   40
-  #endif
-  #ifndef X_SERIAL_RX_PIN
-    #define X_SERIAL_RX_PIN                   63
-  #endif
+//   #ifndef X_SERIAL_TX_PIN
+//     #define X_SERIAL_TX_PIN                   40
+//   #endif
+//   #ifndef X_SERIAL_RX_PIN
+//     #define X_SERIAL_RX_PIN                   63
+//   #endif
   #ifndef X2_SERIAL_TX_PIN
     #define X2_SERIAL_TX_PIN                  -1
   #endif
@@ -350,12 +350,12 @@
     #define X2_SERIAL_RX_PIN                  -1
   #endif
 
-  #ifndef Y_SERIAL_TX_PIN
-    #define Y_SERIAL_TX_PIN                   59
-  #endif
-  #ifndef Y_SERIAL_RX_PIN
-    #define Y_SERIAL_RX_PIN                   64
-  #endif
+//  #ifndef Y_SERIAL_TX_PIN
+//    #define Y_SERIAL_TX_PIN                   59
+//  #endif
+//  #ifndef Y_SERIAL_RX_PIN
+//    #define Y_SERIAL_RX_PIN                   64
+//  #endif
   #ifndef Y2_SERIAL_TX_PIN
     #define Y2_SERIAL_TX_PIN                  -1
   #endif
@@ -363,12 +363,12 @@
     #define Y2_SERIAL_RX_PIN                  -1
   #endif
 
-  #ifndef Z_SERIAL_TX_PIN
-    #define Z_SERIAL_TX_PIN                   42
-  #endif
-  #ifndef Z_SERIAL_RX_PIN
-    #define Z_SERIAL_RX_PIN                   65
-  #endif
+//  #ifndef Z_SERIAL_TX_PIN
+//    #define Z_SERIAL_TX_PIN                   42
+//  #endif
+//  #ifndef Z_SERIAL_RX_PIN
+//    #define Z_SERIAL_RX_PIN                   65
+//  #endif
   #ifndef Z2_SERIAL_TX_PIN
     #define Z2_SERIAL_TX_PIN                  -1
   #endif
@@ -568,8 +568,8 @@
         #define DOGLCD_MOSI          EXP1_08_PIN
         #define DOGLCD_SCK           EXP1_06_PIN
       #else
-        #define LCD_PINS_RS          EXP1_07_PIN
-        #define LCD_PINS_ENABLE      EXP1_08_PIN
+        #define LCD_PINS_RS          20
+        #define LCD_PINS_ENABLE      21
         #define LCD_PINS_D4          EXP1_06_PIN
         #define LCD_PINS_D5          EXP1_05_PIN
         #define LCD_PINS_D6          EXP1_04_PIN
