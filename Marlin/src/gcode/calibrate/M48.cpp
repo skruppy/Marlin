@@ -55,6 +55,10 @@ void GcodeSuite::M48() {
 
   if (homing_needed_error()) return;
 
+  if (parser.seenval('A')) z_probe_fast_mm_s = parser.value_linear_units();
+  if (parser.seenval('B')) z_probe_slow_mm_s = parser.value_linear_units();
+
+
   const int8_t verbose_level = parser.byteval('V', 1);
   if (!WITHIN(verbose_level, 0, 4)) {
     SERIAL_ECHOLNPGM("?(V)erbose level implausible (0-4).");

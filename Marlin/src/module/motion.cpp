@@ -77,6 +77,10 @@
 // Relative Mode. Enable with G91, disable with G90.
 bool relative_mode; // = false;
 
+#if HAS_BED_PROBE
+  feedRate_t z_probe_fast_mm_s = MMM_TO_MMS(Z_PROBE_FEEDRATE_FAST), z_probe_slow_mm_s = MMM_TO_MMS(Z_PROBE_FEEDRATE_SLOW);
+#endif
+
 /**
  * Cartesian Current Position
  *   Used to track the native machine position as moves are queued.
