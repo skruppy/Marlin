@@ -85,6 +85,13 @@ bool relative_mode; // = false
   bool z_min_trusted; // = false
 #endif
 
+#ifdef Z_PROBE_FEEDRATE_SLOW
+  feedRate_t z_probe_slow_mm_s = MMM_TO_MMS(Z_PROBE_FEEDRATE_SLOW);
+#endif
+#ifdef Z_PROBE_FEEDRATE_FAST
+  feedRate_t z_probe_fast_mm_s = MMM_TO_MMS(Z_PROBE_FEEDRATE_FAST);
+#endif
+
 /**
  * Cartesian Current Position
  *   Used to track the native machine position as moves are queued.
