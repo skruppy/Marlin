@@ -31,7 +31,7 @@
 
 #define TG_HEATER_BED_PIN                      8
 #define TG_HEATER_0_PIN                       10
-#define TG_HEATER_1_PIN                       45  // Anycubic Kossel: Unused
+#define TG_HEATER_1_PIN                       45  // Anycubic Kossel: Bed fan
 
 #define TG_FAN0_PIN                            9  // Anycubic Kossel: Usually the part cooling fan
 #define TG_FAN1_PIN                            7  // Anycubic Kossel: Unused
@@ -76,7 +76,7 @@
 #endif
 
 #if HAS_MULTI_HOTEND || TEMP_SENSOR_BED           // EEF, EEB, EFB
-  #define FAN1_PIN                   TG_FAN1_PIN
+  #define FAN1_PIN                   TG_HEATER_1_PIN
 #endif
 #define FAN2_PIN                     TG_FAN2_PIN
 
