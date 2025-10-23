@@ -28,11 +28,39 @@
 
 #define BOARD_INFO_NAME "Anycubic RAMPS 1.4"
 
+
+
+#define X_MIN_PIN -1
+#define Y_MIN_PIN -1
+#define Z_MIN_PIN 53
+
+#define X_MAX_PIN 50
+#define Y_MAX_PIN 51
+#define Z_MAX_PIN 52
+
+#define X_SERIAL_TX_PIN -1
+#define X_SERIAL_RX_PIN -1
+#define Y_SERIAL_TX_PIN -1
+#define Y_SERIAL_RX_PIN -1
+#define Z_SERIAL_TX_PIN -1
+#define Z_SERIAL_RX_PIN -1
+#define E0_SERIAL_TX_PIN -1
+#define E0_SERIAL_RX_PIN -1
+
+// #define SD_SCK_PIN    -1
+// #define SD_MISO_PIN   -1
+// #define SD_MOSI_PIN   -1
+#define SD_SS_PIN     -1
+#define SD_DETECT_PIN -1
+
+#define FILWIDTH_PIN -1
+
+
 //
 // Servos
 //
 #if MB(TRIGORILLA_14_11)
-  #define SERVO0_PIN                           5
+//   #define SERVO0_PIN                           5
 //   #define SERVO1_PIN                           4
 //   #define SERVO2_PIN                          11
 //   #define SERVO3_PIN                           6
