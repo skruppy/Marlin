@@ -367,11 +367,11 @@
    * Serial2 -- TX2 = D16   RX2 = D17 (AUX4-18 and AUX4-17)
    * Serial3 -- TX3 = D14   RX3 = D15 (Available on some RAMPS-like boards)
    */
-  //#define X_HARDWARE_SERIAL Serial1
+  #define X_HARDWARE_SERIAL Serial1
   //#define X2_HARDWARE_SERIAL Serial1
-  //#define Y_HARDWARE_SERIAL Serial1
+  #define Y_HARDWARE_SERIAL Serial2
   //#define Y2_HARDWARE_SERIAL Serial1
-  //#define Z_HARDWARE_SERIAL Serial1
+  #define Z_HARDWARE_SERIAL Serial3
   //#define Z2_HARDWARE_SERIAL Serial1
   //#define E0_HARDWARE_SERIAL Serial1
   //#define E1_HARDWARE_SERIAL Serial1
