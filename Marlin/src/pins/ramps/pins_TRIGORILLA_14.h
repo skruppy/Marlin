@@ -34,7 +34,7 @@
 #define TG_HEATER_1_PIN                       45  // Anycubic Kossel: Bed fan
 
 #define TG_FAN0_PIN                            9  // Anycubic Kossel: Usually the part cooling fan
-#define TG_FAN1_PIN                            7  // Anycubic Kossel: Unused
+#define TG_FAN1_PIN                            7  // Anycubic Kossel: Controler
 #define TG_FAN2_PIN                           44  // Anycubic Kossel: Hotend fan
 
 //
