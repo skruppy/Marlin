@@ -33,6 +33,9 @@
 
 #include "../../inc/MarlinConfig.h"
 
+// TODO this needs to be repeated for all other HAL platform
+#ifdef HAS_SPI_SD
+
 void spiBegin() {
   #if PIN_EXISTS(SD_SS)
     // Do not init HIGH for boards with pin 4 used as Fans or Heaters or otherwise, not likely to have multiple SPI devices anyway.
@@ -249,4 +252,5 @@ void spiBegin() {
 
 #endif // SOFTWARE_SPI || FORCE_SOFT_SPI
 
+#endif
 #endif // __AVR__
