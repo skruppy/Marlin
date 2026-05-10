@@ -74,9 +74,10 @@
 //
 // Heaters / Fans
 //
-#define FAN0_PIN                               9  // FAN0
-#define FAN1_PIN                              45  // FAN1
-#define FAN2_PIN                              44  // FAN2
+#define FAN0_PIN                               9  // Label "FAN0" connected to part cooling fan
+// In Configuration_adv: CONTROLLER_FAN_PIN    7  // Label "FAN1" connected to controller fan
+#define FAN1_PIN                               3  // Label "Endstop X-" connected to bed cooling fan
+#define FAN2_PIN                              44  // Label "FAN2" connected to hotend fan
 #ifndef E0_AUTO_FAN_PIN
   #define E0_AUTO_FAN_PIN               FAN2_PIN
 #endif
