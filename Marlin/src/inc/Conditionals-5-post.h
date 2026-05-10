@@ -3580,6 +3580,10 @@
   #define NOZZLE_PARK_Z_FEEDRATE NOZZLE_PARK_XY_FEEDRATE
 #endif
 
+#if PIN_EXISTS(SD_SCK) || PIN_EXISTS(SD_MISO) || PIN_EXISTS(SD_MOSI)
+  #define HAS_SPI_SD
+#endif
+
 // Force SDCARD_SORT_ALPHA to be enabled for Graphical LCD on LPC1768
 // on boards where SD card and LCD display share the same SPI bus
 // because of a bug in the shared SPI implementation. (See #8122)
