@@ -260,10 +260,10 @@ public:
   #if ENABLED(DWIN_LCD_PROUI)
     static uint16_t z_probe_slow_mm_s;
   #elif defined(Z_PROBE_FEEDRATE_SLOW)
-    extern feedRate_t z_probe_slow_mm_s;
+    static feedRate_t z_probe_slow_mm_s;
   #endif
   #ifdef Z_PROBE_FEEDRATE_FAST
-    extern feedRate_t z_probe_fast_mm_s;
+    static feedRate_t z_probe_fast_mm_s;
   #endif
 
   #ifdef __IMXRT1062__

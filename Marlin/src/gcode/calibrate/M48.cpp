@@ -60,8 +60,8 @@ void GcodeSuite::M48() {
 
   if (motion.homing_needed_error()) return;
 
-  if (parser.seenval('A')) z_probe_fast_mm_s = parser.value_linear_units();
-  if (parser.seenval('B')) z_probe_slow_mm_s = parser.value_linear_units();
+  if (parser.seenval('A')) Motion::z_probe_fast_mm_s = parser.value_linear_units();
+  if (parser.seenval('B')) Motion::z_probe_slow_mm_s = parser.value_linear_units();
 
 
   const int8_t verbose_level = parser.byteval('V', 1);
