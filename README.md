@@ -1,3 +1,13 @@
+Fork of Marlin for my heavily modified Anycubic Kossel Delta Plus.
+It's usually not advisable to base your own firmware on this fork.
+
+```
+pid run
+pio run -e simulator_linux_release
+```
+
+---
+
 <p align="center"><img src="buildroot/share/pixmaps/logo/marlin-outrun-nf-500.png" height="250" alt="MarlinFirmware's logo" /></p>
 
 <h1 align="center">Marlin 3D Printer Firmware</h1>

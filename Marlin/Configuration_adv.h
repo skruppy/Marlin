@@ -4835,7 +4835,9 @@
 //
 // M100 Free Memory Watcher to debug memory usage
 //
+#if __AVR__
 #define M100_FREE_MEMORY_WATCHER
+#endif
 
 //
 // M42 - Set pin states
@@ -4880,7 +4882,9 @@
 #define SOFT_RESET_ON_KILL            // Use a digital button to soft-reset the controller after KILL
 
 // Report uncleaned reset reason from register r2 instead of MCUSR. Supported by Optiboot on AVR.
+#if __AVR__
 #define OPTIBOOT_RESET_REASON
+#endif
 
 // Shrink the build for smaller boards by sacrificing some serial feedback
 #define MARLIN_SMALL_BUILD
