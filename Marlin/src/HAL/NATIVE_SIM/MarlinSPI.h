@@ -21,6 +21,7 @@
  */
 #pragma once
 
+#define MSBFIRST 1
 #include <SPI.h>
 
 using MarlinSPI = SPIClass;
